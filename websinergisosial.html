@@ -1,0 +1,901 @@
+:Portal Pemberdayaan Masyarakat Interaktif:index.html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SinergiSosial - Portal Pemberdayaan Masyarakat Poltekesos</title>
+    <!-- Tailwind CSS CDN untuk desain modern & responsif -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Poppins & Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome untuk Icon sosial yang interaktif -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+        }
+        /* Custom scrollbar untuk tampilan premium */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+/* Gaya Khusus Tombol Melayang (WhatsApp) */
+        .floating-contact {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        .floating-contact:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <div class="floating-contact">
+        <a href="https://wa.me/6289668756652" target="_blank" class="bg-emerald-600 text-white flex items-center space-x-2 px-5 py-3 rounded-full shadow-2xl hover:bg-emerald-700">
+            <i class="fa-brands fa-whatsapp text-2xl"></i>
+            <span class="font-bold text-sm hidden md:inline">Aduan Layanan (089668756652)</span>
+        </a>
+    </div>
+
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- Header & Navigasi Utama -->
+    <header class="bg-emerald-700 text-white shadow-md sticky top-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="bg-white text-emerald-700 p-2.5 rounded-xl shadow-inner flex items-center justify-center">
+                    <i class="fa-solid fa-hands-holding-child text-2xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold tracking-tight">SinergiSosial</h1>
+                    <p class="text-xs text-emerald-100 hidden sm:block">Teknologi Informatika Pekerjaan Sosial Poltekesos</p>
+                </div>
+            </div>
+            
+            <!-- Menu Navigasi Utama (Berfungsi sebagai filter tab SPA) -->
+            <nav class="flex space-x-1 bg-emerald-800/50 p-1.5 rounded-xl border border-emerald-600/30">
+                <button onclick="switchTab('beranda')" id="tab-beranda" class="tab-btn px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 bg-white text-emerald-700 shadow">
+                    <i class="fa-solid fa-house mr-1.5"></i> Beranda
+                </button>
+                <button onclick="switchTab('volunteer')" id="tab-volunteer" class="tab-btn px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-emerald-100 hover:bg-emerald-600/30">
+                    <i class="fa-solid fa-handshake-angle mr-1.5"></i> Volunteer
+                </button>
+                <button onclick="switchTab('donasi')" id="tab-donasi" class="tab-btn px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-emerald-100 hover:bg-emerald-600/30">
+                    <i class="fa-solid fa-hand-holding-heart mr-1.5"></i> Donasi & Bantuan
+                </button>
+                <button onclick="switchTab('community')" id="tab-community" class="tab-btn px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-emerald-100 hover:bg-emerald-600/30">
+                    <i class="fa-solid fa-users mr-1.5"></i> Community Hub
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- ==================== 1. TAB BERANDA ==================== -->
+        <section id="content-beranda" class="tab-content block space-y-8 animate-fade-in">
+            <!-- Hero Banner -->
+            <div class="relative bg-gradient-to-r from-emerald-800 to-teal-700 rounded-3xl text-white overflow-hidden shadow-xl">
+                <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                <div class="relative p-8 md:p-16 max-w-3xl space-y-4">
+                    <span class="bg-amber-500 text-slate-900 font-semibold text-xs uppercase px-3 py-1.5 rounded-full tracking-wider shadow-sm">
+                        Tugas Teknologi & Manajemen Informatika
+                    </span>
+                    <h2 class="text-3xl md:text-5xl font-extrabold leading-tight">Teknologi untuk Penguatan Kapasitas Masyarakat</h2>
+                    <p class="text-emerald-100 text-base md:text-lg">
+                        Sebuah platform digital interaktif berbasis nilai Pekerjaan Sosial guna mempercepat penanganan masalah sosial, memfasilitasi kerelawanan, serta kolaborasi komunitas secara inklusif.
+                    </p>
+                    <div class="pt-4 flex flex-wrap gap-3">
+                        <button onclick="switchTab('volunteer')" class="bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold px-6 py-3 rounded-xl transition duration-300 shadow-md">
+                            Mulai Beraksi <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </button>
+                        <button onclick="switchTab('donasi')" class="bg-transparent border border-white hover:bg-white/10 font-medium px-6 py-3 rounded-xl transition duration-300">
+                            Cari Bantuan
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ringkasan Statistik Interaktif -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-center space-x-4">
+                    <div class="bg-emerald-100 text-emerald-700 p-4 rounded-xl">
+                        <i class="fa-solid fa-users-viewfinder text-2xl"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm text-slate-500 font-medium">Volunteers Terdaftar</p>
+                        <h4 class="text-2xl font-bold text-slate-800" id="stats-volunteers">137 Orang</h4>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-center space-x-4">
+                    <div class="bg-amber-100 text-amber-700 p-4 rounded-xl">
+                        <i class="fa-solid fa-gift text-2xl"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm text-slate-500 font-medium">Donasi Tersalurkan</p>
+                        <h4 class="text-2xl font-bold text-slate-800" id="stats-donations">42 Paket Bantuan</h4>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-center space-x-4">
+                    <div class="bg-teal-100 text-teal-700 p-4 rounded-xl">
+                        <i class="fa-solid fa-house-chimney-user text-2xl"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm text-slate-500 font-medium">Komunitas Aktif</p>
+                        <h4 class="text-2xl font-bold text-slate-800">18 Komunitas</h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Konsep Pemberdayaan (Nilai Pekerjaan Sosial) -->
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 space-y-6">
+                <div class="border-l-4 border-emerald-600 pl-4">
+                    <h3 class="text-2xl font-bold text-slate-800">Kenapa Teknologi Penting bagi Pekerjaan Sosial?</h3>
+                    <p class="text-sm text-slate-500">Perspektif Pemberdayaan Masyarakat (Community Empowerment)</p>
+                </div>
+                <p class="text-slate-600 leading-relaxed">
+                    Dalam konsep Pekerjaan Sosial, pemberdayaan bukanlah memberikan ketergantungan melainkan <strong>memberikan kekuatan (enabling)</strong> agar masyarakat mandiri. Melalui teknologi informasi, hambatan birokrasi dan jarak komunikasi dapat dipangkas secara instan. Platform ini mewakili pilar taktis pemberdayaan melalui pemetaan potensi, pemerataan bantuan, serta penggalangan solidaritas kolektif.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                        <h5 class="font-semibold text-emerald-800 mb-1"><i class="fa-solid fa-eye-low-vision mr-1.5"></i> Transparan</h5>
+                        <p class="text-xs text-slate-500">Masyarakat dapat melihat langsung aliran donasi dan detail penanggung jawab kegiatan.</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                        <h5 class="font-semibold text-emerald-800 mb-1"><i class="fa-solid fa-users-line mr-1.5"></i> Partisipatif</h5>
+                        <p class="text-xs text-slate-500">Memberdayakan warga lokal agar tidak sekadar menjadi objek, namun juga subjek pengambil keputusan.</p>
+                    </div>
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                        <h5 class="font-semibold text-emerald-800 mb-1"><i class="fa-solid fa-seedling mr-1.5"></i> Berkelanjutan</h5>
+                        <p class="text-xs text-slate-500">Komunitas lokal dikuatkan agar mampu terus berjalan mandiri tanpa terus bergantung pada stimulan luar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==================== 2. TAB VOLUNTEER FINDER ==================== -->
+        <section id="content-volunteer" class="tab-content hidden space-y-8 animate-fade-in">
+            <!-- Header Fitur -->
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800"><i class="fa-solid fa-handshake-angle text-emerald-600 mr-2"></i>Volunteer Finder</h3>
+                    <p class="text-slate-500 text-sm">Cari dan ikuti kegiatan kerelawanan yang sesuai dengan ketertarikan dan lokasimu.</p>
+                </div>
+                <!-- Tombol Buat Kegiatan Volunteer Baru -->
+                <button onclick="toggleModal('modal-volunteer', true)" class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-4 py-2.5 rounded-xl shadow-md transition flex items-center space-x-1.5 self-start">
+                    <i class="fa-solid fa-plus"></i> <span>Buka Lowongan Volunteer</span>
+                </button>
+            </div>
+
+            <!-- Filter & Pencarian -->
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="relative">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400"></i>
+                    <input type="text" id="search-volunteer" onkeyup="filterVolunteers()" placeholder="Cari kegiatan atau lokasi..." class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm">
+                </div>
+                <div>
+                    <select id="filter-category" onchange="filterVolunteers()" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm">
+                        <option value="all">Semua Kategori Minat</option>
+                        <option value="mengajar">Mengajar Anak</option>
+                        <option value="lingkungan">Bersih Lingkungan</option>
+                        <option value="darah">Donor Darah</option>
+                        <option value="bencana">Bantuan Bencana</option>
+                        <option value="baksos">Bakti Sosial</option>
+                    </select>
+                </div>
+                <div>
+                    <select id="filter-location" onchange="filterVolunteers()" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm">
+                        <option value="all">Semua Lokasi Bandung</option>
+                        <option value="Coblong">Coblong / Dago</option>
+                        <option value="Kiaracondong">Kiaracondong</option>
+                        <option value="Regol">Regol</option>
+                        <option value="Ujungberung">Ujungberung</option>
+                        <option value="Lembang">Lembang</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- List Card Volunteer -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="volunteer-list">
+                <!-- Data di-render dinamis oleh JavaScript -->
+            </div>
+        </section>
+
+
+        <!-- ==================== 3. TAB DONASI & HELP REQUEST ==================== -->
+        <section id="content-donasi" class="tab-content hidden space-y-8 animate-fade-in">
+            <!-- Header Fitur -->
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800"><i class="fa-solid fa-hand-holding-heart text-amber-600 mr-2"></i>Donasi & Pengajuan Bantuan</h3>
+                    <p class="text-slate-500 text-sm">Salurkan bantuanmu untuk kemanusiaan atau ajukan kebutuhan sosial mendesak di sekitarmu.</p>
+                </div>
+                <div class="flex gap-2.5">
+                    <button onclick="openDonationModal('donasi')" class="bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold px-4 py-2.5 rounded-xl shadow transition text-sm">
+                        <i class="fa-solid fa-circle-dollar-to-slot mr-1.5"></i> Buka Donasi Baru
+                    </button>
+                    <button onclick="openDonationModal('bantuan')" class="bg-slate-800 hover:bg-slate-900 text-white font-medium px-4 py-2.5 rounded-xl shadow transition text-sm">
+                        <i class="fa-solid fa-hand-holding-hand mr-1.5"></i> Ajukan Bantuan
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tab Switching antara Donasi Terbuka dan Pengajuan Bantuan -->
+            <div class="flex space-x-2 border-b border-slate-200">
+                <button onclick="toggleDonationView('donation')" id="btn-view-donation" class="px-6 py-3 font-semibold text-sm border-b-2 border-amber-500 text-amber-600 transition-all">
+                    <i class="fa-solid fa-gift mr-2"></i>Donasi Aktif
+                </button>
+                <button onclick="toggleDonationView('request')" id="btn-view-request" class="px-6 py-3 font-semibold text-sm text-slate-500 border-b-2 border-transparent hover:text-slate-800 transition-all">
+                    <i class="fa-solid fa-triangle-exclamation mr-2"></i>Permohonan Bantuan Warga
+                </button>
+            </div>
+
+            <!-- List Grid Donasi / Bantuan -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="donation-list">
+                <!-- Render dinamis JS -->
+            </div>
+        </section>
+
+
+        <!-- ==================== 4. TAB COMMUNITY HUB ==================== -->
+        <section id="content-community" class="tab-content hidden space-y-8 animate-fade-in">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Sidebar Komunitas Aktif -->
+                <div class="lg:col-span-4 space-y-6">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 space-y-4">
+                        <h4 class="font-bold text-slate-800 border-b pb-3"><i class="fa-solid fa-network-wired text-emerald-600 mr-2"></i>Komunitas Penggerak</h4>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3 p-2 hover:bg-slate-50 rounded-lg transition">
+                                <span class="bg-emerald-100 text-emerald-700 w-10 h-10 rounded-full flex items-center justify-center font-bold">HP</span>
+                                <div>
+                                    <h5 class="text-sm font-semibold text-slate-800">Hima Peksos Poltekesos</h5>
+                                    <p class="text-xs text-slate-500">24 Kegiatan • Bandung Raya</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 p-2 hover:bg-slate-50 rounded-lg transition">
+                                <span class="bg-blue-100 text-blue-700 w-10 h-10 rounded-full flex items-center justify-center font-bold">GG</span>
+                                <div>
+                                    <h5 class="text-sm font-semibold text-slate-800">Green Gen Bandung</h5>
+                                    <p class="text-xs text-slate-500">12 Kegiatan • Peduli Sampah</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3 p-2 hover:bg-slate-50 rounded-lg transition">
+                                <span class="bg-amber-100 text-amber-700 w-10 h-10 rounded-full flex items-center justify-center font-bold">SB</span>
+                                <div>
+                                    <h5 class="text-sm font-semibold text-slate-800">Sembako Bergerak</h5>
+                                    <p class="text-xs text-slate-500">19 Kegiatan • Bansos Keliling</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-emerald-800 to-emerald-950 p-6 rounded-2xl text-white space-y-3">
+                        <h5 class="font-bold text-lg">Ingin Daftarkan Komunitasmu?</h5>
+                        <p class="text-xs text-emerald-200">Perluas jangkauan sosial, kumpulkan pendukung aksi, dan update capaian kegiatanmu secara nasional.</p>
+                        <button class="bg-amber-500 hover:bg-amber-600 text-slate-900 text-xs font-bold px-4 py-2 rounded-lg transition w-full shadow">
+                            Hubungi Admin Hub
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Feed Update Kegiatan Komunitas -->
+                <div class="lg:col-span-8 space-y-6">
+                    <!-- Form Kirim Posting / Campaign Baru -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                        <h4 class="font-bold text-slate-800 mb-4 text-sm uppercase tracking-wider text-slate-500">Buat Pembaruan Kampanye / Kegiatan</h4>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-3">
+                                <div class="bg-emerald-100 text-emerald-700 w-10 h-10 rounded-full flex items-center justify-center font-bold mt-1">U</div>
+                                <div class="flex-grow">
+                                    <textarea id="community-input-text" rows="3" placeholder="Bagikan aksi sosial terbarumu, open volunteer, atau progres kampanye hari ini..." class="w-full p-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm"></textarea>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center pt-2 border-t">
+                                <div class="flex space-x-2 text-slate-500 text-xs">
+                                    <button class="hover:text-emerald-700 flex items-center space-x-1 px-2.5 py-1.5 rounded-lg hover:bg-slate-50"><i class="fa-solid fa-camera"></i> <span>Foto/Video</span></button>
+                                    <button class="hover:text-emerald-700 flex items-center space-x-1 px-2.5 py-1.5 rounded-lg hover:bg-slate-50"><i class="fa-solid fa-tags"></i> <span>Tandai Komunitas</span></button>
+                                </div>
+                                <button onclick="addCommunityPost()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-4 py-1.5 rounded-lg text-sm transition">
+                                    Posting Aksi
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Post Feed -->
+                    <div class="space-y-4" id="community-feed">
+                        <!-- Render dinamis JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER & INFORMASI IDENTITAS TUGAS -->
+    <footer class="bg-slate-900 text-slate-400 mt-16 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="space-y-4">
+                <div class="flex items-center space-x-2 text-white">
+                    <i class="fa-solid fa-hands-holding-child text-2xl text-emerald-500"></i>
+                    <span class="text-lg font-bold tracking-tight">SinergiSosial</span>
+                </div>
+                <p class="text-xs leading-relaxed text-slate-500">
+                    Sistem Pendukung Keputusan & Pemberdayaan Komunitas Terpadu. Dirancang khusus guna memenuhi kurikulum praktikum mahasiswa Pekerjaan Sosial dalam optimalisasi TI.
+                </p>
+            </div>
+            <div>
+                <h5 class="text-white font-bold text-sm uppercase mb-4">Mata Kuliah</h5>
+                <p class="text-xs text-slate-500 font-semibold mb-1">Teknologi & Manajemen Informatika (TMI)</p>
+                <p class="text-xs text-slate-500 mb-3">Dosen Pengampu Praktikum & Teori</p>
+                <div class="text-xs text-slate-500">
+                    Jurusan Pekerjaan Sosial<br>
+                    Politeknik Kesejahteraan Sosial (Poltekesos) Bandung
+                </div>
+            </div>
+            <div>
+                <h5 class="text-white font-bold text-sm uppercase mb-4">Informasi Pengembang</h5>
+                <p class="text-xs text-slate-400 font-semibold">Nama Mahasiswa:</p>
+                <p class="text-xs text-slate-500 italic mb-2">[Nama Lengkap Anda / Angkatan]</p>
+                <p class="text-xs text-slate-400 font-semibold">NIM:</p>
+                <p class="text-xs text-slate-500 italic mb-2">[NIM Anda]</p>
+                <div class="flex space-x-3 pt-2 text-slate-500">
+                    <a href="#" class="hover:text-white"><i class="fa-brands fa-github text-lg"></i></a>
+                    <a href="#" class="hover:text-white"><i class="fa-brands fa-linkedin text-lg"></i></a>
+                    <a href="#" class="hover:text-white"><i class="fa-solid fa-envelope text-lg"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="bg-slate-950 py-4 text-center text-xs text-slate-600 border-t border-slate-800">
+            &copy; 2026 SinergiSosial Poltekesos Bandung. Hak Cipta Dilindungi Undang-Undang.
+        </div>
+    </footer>
+
+
+    <!-- ==================== MODALS (DYNAMICS DIALOUGE) ==================== -->
+
+    <!-- Modal 1: Pendaftaran Volunteer -->
+    <div id="modal-volunteer" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-100 space-y-4 m-4">
+            <div class="flex justify-between items-center">
+                <h4 class="font-bold text-slate-800 text-lg">Registrasi Volunteer Baru</h4>
+                <button onclick="toggleModal('modal-volunteer', false)" class="text-slate-400 hover:text-slate-600"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+            <form id="form-register-volunteer" onsubmit="handleRegisterVolunteer(event)" class="space-y-4">
+                <input type="hidden" id="register-activity-id">
+                <div class="space-y-1">
+                    <label class="text-xs font-semibold text-slate-500">Nama Lengkap</label>
+                    <input type="text" id="reg-name" required class="w-full px-3.5 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm">
+                </div>
+                <div class="space-y-1">
+                    <label class="text-xs font-semibold text-slate-500">Nomor WhatsApp</label>
+                    <input type="tel" id="reg-wa" required placeholder="08..." class="w-full px-3.5 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm">
+                </div>
+                <div class="space-y-1">
+                    <label class="text-xs font-semibold text-slate-500">Motivasi Bergabung</label>
+                    <textarea id="reg-motivation" rows="3" required placeholder="Berikan alasan singkat..." class="w-full px-3.5 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm"></textarea>
+                </div>
+                <button type="submit" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 rounded-xl text-sm transition w-full">
+                    Kirim Form Partisipasi
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal 2: Pembuatan Program / Kegiatan Volunteer Baru -->
+    <div id="modal-volunteer-new" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl border border-slate-100 space-y-4 m-4 overflow-y-auto max-h-[90vh]">
+            <div class="flex justify-between items-center">
+                <h4 class="font-bold text-slate-800 text-lg">Buka Lowongan Volunteer Baru</h4>
+                <button onclick="toggleModal('modal-volunteer-new', false)" class="text-slate-400 hover:text-slate-600"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+            <form id="form-new-volunteer" onsubmit="handleNewVolunteer(event)" class="space-y-4">
+                <div class="space-y-1">
+                    <label class="text-xs font-semibold text-slate-500">Nama Aksi Sosial</label>
+                    <input type="text" id="new-vol-title" required placeholder="Contoh: Pendampingan Mengajar Anak Kolong Jembatan" class="w-full px-3.5 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-1">
+                        <label class="text-xs font-semibold text-slate-500">Kategori</label>
+                        <select id="new-vol-category" class="w-full px-3.5 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm">
+                            <option value="mengajar">Mengajar Anak</option>
+                            <option value="lingkungan">Bersih Lingkungan</option>
+                            <option value="darah">Donor Darah</option>
+                            <option value="bencana">Bantuan Bencana</option>
+                            <option value="baksos">Bakti Sosial</option>
+                        </select>
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-xs font-semibold text-slate-500">Kecamatan (Target Lokasi)</label>
+                        <input type="text" id="new-vol-location" required placeholder="Contoh: Coblong" class="w-full px-3.5 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm">
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-1">
+                        <label class="text-xs font-semibold text-slate-500">Tanggal Pelaksanaan</label>
+                        <input type="text" id="new-vol-date" required placeholder="Contoh: 15 Juni 2026" class="w-full px-3.5 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm">
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-xs font-semibold text-slate-500">Nama Penyelenggara</label>
+                        <input type="text" id="new-vol-author" required placeholder="Contoh: Karang Taruna Coblong" class="w-full px-3.5 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm">
+                    </div>
+                </div>
+                <div class="space-y-1">
+                    <label class="text-xs font-semibold text-slate-500">Deskripsi Lengkap Kegiatan</label>
+                    <textarea id="new-vol-desc" rows="4" required placeholder="Gambarkan tugas volunteer, prasyarat, dan kebutuhan..." class="w-full px-3.5 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm"></textarea>
+                </div>
+                <button type="submit" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 rounded-xl text-sm transition w-full">
+                    Publikasikan Kegiatan
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal 3: Pembuatan Donasi / Ajukan Bantuan -->
+    <div id="modal-donation-new" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 shadow-2xl border border-slate-100 space-y-4 m-4">
+            <div class="flex justify-between items-center">
+                <h4 id="donation-modal-title" class="font-bold text-slate-800 text-lg">Buka Campaign Donasi</h4>
+                <button onclick="toggleModal('modal-donation-new', false)" class="text-slate-400 hover:text-slate-600"><i class="fa-solid fa-xmark text-lg"></i></button>
+            </div>
+            <form id="form-new-donation" onsubmit="handleNewDonation(event)" class="space-y-4">
+                <input type="hidden" id="new-don-type" value="donation">
+                <div class="space-y-1">
+                    <label class="text-xs font-semibold text-slate-500">Judul Donasi / Kebutuhan</label>
+                    <input type="text" id="new-don-title" required placeholder="Contoh: Paket Pakaian Layak Pakai Panti Asuhan Al-Fitrah" class="w-full px-3.5 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm">
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="space-y-1">
+                        <label class="text-xs font-semibold text-slate-500">Jenis Sektor Kebutuhan</label>
+                        <select id="new-don-item" class="w-full px-3.5 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm">
+                            <option value="sembako">Bantuan Sembako</option>
+                            <option value="buku">Buku Sekolah & Alat Tulis</option>
+                            <option value="pakaian">Pakaian Layak Pakai</option>
+                            <option value="medis">Kebutuhan Medis & Kesehatan</option>
+                        </select>
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-xs font-semibold text-slate-500">Wilayah / Target Lokasi</label>
+                        <input type="text" id="new-don-location" required placeholder="Contoh: Ujungberung" class="w-full px-3.5 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm">
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div id="wrapper-don-target" class="space-y-1">
+                        <label class="text-xs font-semibold text-slate-500">Target Nominal / Unit</label>
+                        <input type="text" id="new-don-target" placeholder="Contoh: Rp 5.000.000 atau 100 Dus" class="w-full px-3.5 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm">
+                    </div>
+                    <div id="wrapper-don-requester" class="space-y-1">
+                        <label class="text-xs font-semibold text-slate-500">Nama Pemohon / Kontak</label>
+                        <input type="text" id="new-don-requester" required placeholder="Contoh: Yayasan Al-Fitrah" class="w-full px-3.5 py-2 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm">
+                    </div>
+                </div>
+                <button type="submit" id="btn-donation-submit" class="bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-3 rounded-xl text-sm transition w-full">
+                    Kirim Program
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- SCRIPT LOGIC JAVASCRIPT UNTUK INTERAKTIVITAS MAKSIMAL -->
+    <script>
+        // Data Simulasi Penyimpanan Sementara (State Management)
+        const appState = {
+            volunteers: [
+                { id: 1, title: 'Mengajar Membaca Anak Pinggiran Sungai', category: 'mengajar', location: 'Coblong', description: 'Membimbing adik-adik marjinal di Coblong belajar mengeja dan membaca dasar secara ceria.', date: 'Setiap Sabtu Sore', author: 'Hima Peksos Poltekesos', registered: 12 },
+                { id: 2, title: 'Aksi Bersih Sampah Sungai Cikapundung', category: 'lingkungan', location: 'Lembang', description: 'Aksi membersihkan sungai dari sisa limbah rumah tangga demi sanitasi lingkungan sehat.', date: '31 Mei 2026', author: 'Green Gen Bandung', registered: 45 },
+                { id: 3, title: 'Donor Darah Peduli Kemanusiaan PMI', category: 'darah', location: 'Regol', description: 'Menggalang pasokan kantong darah kerja sama bersama PMI kota Bandung untuk kesiapsiagaan.', date: '01 Juni 2026', author: 'PMI Bandung', registered: 80 },
+                { id: 4, title: 'Dapur Umum & Kesiapan Tanggap Bencana', category: 'bencana', location: 'Ujungberung', description: 'Pelatihan teknis posko tanggap darurat dan distribusi bantuan logistik makanan cepat saji.', date: '05 Juni 2026', author: 'Tagana Bandung', registered: 8 },
+                { id: 5, title: 'Bakti Sosial & Penyuluhan Lansia Bahagia', category: 'baksos', location: 'Kiaracondong', description: 'Memberikan bantuan psikososial, hiburan, dan cek kesehatan gratis khusus bagi lansia dhuafa.', date: '07 Juni 2026', author: 'Peksos Muda', registered: 18 }
+            ],
+            donations: [
+                { id: 1, type: 'donation', title: 'Paket Sembako Lansia Kiaracondong', itemType: 'sembako', target: 'Rp 10.000.000', raised: 'Rp 6.400.000', location: 'Kiaracondong', requester: 'Sembako Bergerak' },
+                { id: 2, type: 'donation', title: 'Pengadaan Buku Sekolah Taman Baca Pintar', itemType: 'buku', target: '200 Buku', raised: '112 Buku', location: 'Lembang', requester: 'Gerakan Literasi' },
+                { id: 3, type: 'request', title: 'Butuh Segera Alat Bantu Jalan & Kursi Roda', itemType: 'medis', target: '2 Kursi Roda', raised: 'Mencari Donatur', location: 'Regol', requester: 'Keluarga Bpk. Herman' },
+                { id: 4, type: 'request', title: 'Kebutuhan Sembako Korban Kebakaran', itemType: 'sembako', target: '15 Paket', raised: 'Mencari Donatur', location: 'Ujungberung', requester: 'Karang Taruna' }
+            ],
+            communityPosts: [
+                { id: 1, author: 'Hima Peksos Poltekesos', avatar: '🎓', time: '2 jam yang lalu', text: 'Alhamdulillah, kegiatan pendampingan lansia di Kiaracondong berjalan hangat. Senyum bahagia mereka adalah energi kami sebagai praktisi pekerjaan sosial. Terimakasih para donatur!', likes: 42, comments: 4 },
+                { id: 2, author: 'Green Gen Bandung', avatar: '🌱', time: '1 hari yang lalu', text: 'Yuk persiapkan diri! Akhir pekan ini kita aksi turun ke Sungai Cikapundung. Segera daftarkan diri rekan-rekan lewat fitur Volunteer Finder di atas.', likes: 29, comments: 1 }
+            ]
+        };
+
+        // Fungsi berpindah Tab (SPA feel)
+        function switchTab(tabId) {
+            // Sembunyikan semua konten tab
+            document.querySelectorAll('.tab-content').forEach(element => {
+                element.classList.add('hidden');
+            });
+            // Tampilkan tab yang dipilih
+            document.getElementById(`content-${tabId}`).classList.remove('hidden');
+
+            // Set state tombol navigasi
+            document.querySelectorAll('.tab-btn').forEach(button => {
+                button.className = "tab-btn px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-emerald-100 hover:bg-emerald-600/30";
+            });
+            
+            const activeBtn = document.getElementById(`tab-${tabId}`);
+            if (activeBtn) {
+                activeBtn.className = "tab-btn px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 bg-white text-emerald-700 shadow";
+            }
+        }
+
+        // Tampilan list Volunteer berdasarkan Filter & Search
+        function renderVolunteers(data = appState.volunteers) {
+            const container = document.getElementById('volunteer-list');
+            container.innerHTML = '';
+            
+            if (data.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-1 md:col-span-3 text-center py-12 bg-white rounded-3xl border border-dashed border-slate-200 text-slate-400">
+                        <i class="fa-solid fa-hourglass-empty text-4xl mb-3"></i>
+                        <p class="text-sm font-medium">Kegiatan tidak ditemukan. Coba ganti kata kunci pencarian.</p>
+                    </div>`;
+                return;
+            }
+
+            data.forEach(vol => {
+                // Konfigurasi icon dan warna badge berdasarkan kategori
+                let categoryIcon = "fa-handshake-angle";
+                let badgeColor = "bg-emerald-50 text-emerald-700";
+                if(vol.category === 'mengajar') { categoryIcon = "fa-graduation-cap"; badgeColor = "bg-blue-50 text-blue-700"; }
+                else if(vol.category === 'lingkungan') { categoryIcon = "fa-leaf"; badgeColor = "bg-teal-50 text-teal-700"; }
+                else if(vol.category === 'darah') { categoryIcon = "fa-droplet"; badgeColor = "bg-red-50 text-red-700"; }
+                else if(vol.category === 'bencana') { categoryIcon = "fa-triangle-exclamation"; badgeColor = "bg-amber-50 text-amber-700"; }
+
+                const card = `
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex flex-col justify-between hover:shadow-md transition-all">
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-start">
+                                <span class="px-2.5 py-1 text-xs font-semibold rounded-lg ${badgeColor}">
+                                    <i class="fa-solid ${categoryIcon} mr-1"></i> ${vol.category.toUpperCase()}
+                                </span>
+                                <span class="text-xs text-slate-400"><i class="fa-solid fa-location-dot text-emerald-600 mr-1"></i> ${vol.location}</span>
+                            </div>
+                            <h4 class="font-bold text-slate-800 text-base leading-snug">${vol.title}</h4>
+                            <p class="text-xs text-slate-500 line-clamp-3">${vol.description}</p>
+                            
+                            <div class="pt-2 flex flex-col gap-2 text-xs text-slate-500 border-t border-slate-100">
+                                <div class="flex items-center"><i class="fa-solid fa-calendar-day text-emerald-600 w-5"></i> <span>${vol.date}</span></div>
+                                <div class="flex items-center"><i class="fa-solid fa-circle-user text-emerald-600 w-5"></i> <span>Penyelenggara: <b>${vol.author}</b></span></div>
+                            </div>
+                        </div>
+                        
+                        <div class="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs font-medium text-slate-500"><i class="fa-solid fa-users text-emerald-600 mr-1.5"></i> <b>${vol.registered}</b> Terdaftar</span>
+                            <button onclick="openRegisterVolunteerModal(${vol.id})" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold px-4 py-2 rounded-lg transition shadow-sm">
+                                Ikut Aksi
+                            </button>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += card;
+            });
+            
+            // Perbarui Data Statistik Beranda secara dinamis
+            const totalVolunteers = appState.volunteers.reduce((acc, curr) => acc + curr.registered, 0);
+            document.getElementById('stats-volunteers').innerText = `${totalVolunteers} Orang`;
+        }
+
+        // Filter pencarian volunteer
+        function filterVolunteers() {
+            const search = document.getElementById('search-volunteer').value.toLowerCase();
+            const cat = document.getElementById('filter-category').value;
+            const loc = document.getElementById('filter-location').value;
+
+            const filtered = appState.volunteers.filter(vol => {
+                const matchSearch = vol.title.toLowerCase().includes(search) || vol.location.toLowerCase().includes(search) || vol.description.toLowerCase().includes(search);
+                const matchCat = cat === 'all' || vol.category === cat;
+                const matchLoc = loc === 'all' || vol.location.toLowerCase().includes(loc.toLowerCase());
+                return matchSearch && matchCat && matchLoc;
+            });
+
+            renderVolunteers(filtered);
+        }
+
+        // Tampilan list Donasi & Permohonan Bantuan
+        let currentDonationView = 'donation'; // default view
+        
+        function renderDonations() {
+            const container = document.getElementById('donation-list');
+            container.innerHTML = '';
+            
+            const filtered = appState.donations.filter(don => don.type === currentDonationView);
+
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-1 md:col-span-3 text-center py-12 bg-white rounded-3xl border border-dashed border-slate-200 text-slate-400">
+                        <i class="fa-solid fa-hand-holding-heart text-4xl mb-3"></i>
+                        <p class="text-sm font-medium">Belum ada pengajuan bantuan aktif saat ini.</p>
+                    </div>`;
+                return;
+            }
+
+            filtered.forEach(don => {
+                // Setup visual representation berdasarkan tipe barang
+                let itemIcon = "fa-box-open";
+                let iconBg = "bg-amber-100 text-amber-700";
+                if(don.itemType === 'sembako') { itemIcon = "fa-bowl-rice"; iconBg = "bg-orange-100 text-orange-700"; }
+                else if(don.itemType === 'buku') { itemIcon = "fa-book-open-reader"; iconBg = "bg-blue-100 text-blue-700"; }
+                else if(don.itemType === 'pakaian') { itemIcon = "fa-shirt"; iconBg = "bg-teal-100 text-teal-700"; }
+                else if(don.itemType === 'medis') { itemIcon = "fa-hand-holding-medical"; iconBg = "bg-rose-100 text-rose-700"; }
+
+                const isDonation = don.type === 'donation';
+
+                const card = `
+                    <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex flex-col justify-between hover:shadow-md transition">
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-start">
+                                <div class="${iconBg} p-3 rounded-xl flex items-center justify-center">
+                                    <i class="fa-solid ${itemIcon} text-xl"></i>
+                                </div>
+                                <span class="text-xs text-slate-400"><i class="fa-solid fa-location-dot mr-1"></i> ${don.location}</span>
+                            </div>
+                            <h4 class="font-bold text-slate-800 text-base leading-snug">${don.title}</h4>
+                            
+                            <!-- Detail Target Penyaluran -->
+                            <div class="space-y-1">
+                                <div class="flex justify-between text-xs font-semibold text-slate-600">
+                                    <span>${isDonation ? 'Progres Donasi' : 'Kebutuhan Mendesak'}</span>
+                                    <span>${don.raised} / ${don.target}</span>
+                                </div>
+                                ${isDonation ? `
+                                <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-amber-500 h-full rounded-full" style="width: 65%;"></div>
+                                </div>` : ''}
+                            </div>
+                        </div>
+
+                        <div class="pt-4 mt-6 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs text-slate-500">Oleh: <b>${don.requester}</b></span>
+                            <button onclick="handleContributeDonation(${don.id})" class="bg-slate-900 text-white hover:bg-slate-800 text-xs font-semibold px-4.5 py-2.5 rounded-xl transition">
+                                ${isDonation ? 'Salurkan Donasi' : 'Bantu Sekarang'}
+                            </button>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += card;
+            });
+        }
+
+        function toggleDonationView(viewType) {
+            currentDonationView = viewType;
+            
+            // Set styles tab donasi
+            const btnDonation = document.getElementById('btn-view-donation');
+            const btnRequest = document.getElementById('btn-view-request');
+
+            if (viewType === 'donation') {
+                btnDonation.className = "px-6 py-3 font-semibold text-sm border-b-2 border-amber-500 text-amber-600 transition-all";
+                btnRequest.className = "px-6 py-3 font-semibold text-sm text-slate-500 border-b-2 border-transparent hover:text-slate-800 transition-all";
+            } else {
+                btnDonation.className = "px-6 py-3 font-semibold text-sm text-slate-500 border-b-2 border-transparent hover:text-slate-800 transition-all";
+                btnRequest.className = "px-6 py-3 font-semibold text-sm border-b-2 border-slate-800 text-slate-800 transition-all";
+            }
+
+            renderDonations();
+        }
+
+        // Tampilan Feed di Community Hub
+        function renderCommunityFeed() {
+            const feed = document.getElementById('community-feed');
+            feed.innerHTML = '';
+
+            appState.communityPosts.forEach(post => {
+                const card = `
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <span class="bg-emerald-100 text-emerald-700 w-10 h-10 rounded-full flex items-center justify-center text-lg">${post.avatar}</span>
+                                <div>
+                                    <h5 class="text-sm font-bold text-slate-800">${post.author}</h5>
+                                    <p class="text-xs text-slate-400">${post.time}</p>
+                                </div>
+                            </div>
+                            <span class="text-xs text-emerald-600 bg-emerald-50 px-2 py-1 rounded font-medium"><i class="fa-solid fa-circle-check mr-1"></i> Terverifikasi</span>
+                        </div>
+                        <p class="text-sm text-slate-600 leading-relaxed">${post.text}</p>
+                        
+                        <div class="pt-3 border-t border-slate-100 flex space-x-4 text-xs text-slate-500">
+                            <button onclick="handleLikePost(${post.id})" class="hover:text-red-500 transition flex items-center space-x-1.5">
+                                <i class="fa-regular fa-heart"></i> <span>Suka (${post.likes})</span>
+                            </button>
+                            <button class="hover:text-emerald-700 transition flex items-center space-x-1.5">
+                                <i class="fa-regular fa-comment"></i> <span>Komentar (${post.comments})</span>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                feed.innerHTML += card;
+            });
+        }
+
+
+        // ==================== INTERAKSI ACTIONS (MODALS & EVENTS) ====================
+        
+        function toggleModal(modalId, isVisible) {
+            const modal = document.getElementById(modalId);
+            if (isVisible) {
+                modal.classList.remove('hidden');
+            } else {
+                modal.classList.add('hidden');
+            }
+        }
+
+        function openRegisterVolunteerModal(id) {
+            document.getElementById('register-activity-id').value = id;
+            toggleModal('modal-volunteer', true);
+        }
+
+        function handleRegisterVolunteer(event) {
+            event.preventDefault();
+            const id = document.getElementById('register-activity-id').value;
+            const name = document.getElementById('reg-name').value;
+            
+            // Temukan kegiatan di state & tambahkan partisipan
+            const vol = appState.volunteers.find(v => v.id == id);
+            if (vol) {
+                vol.registered += 1;
+                alert(`Terima kasih ${name}! Pendaftaran Anda di aksi "${vol.title}" berhasil disimpan ke simulasi database TMI.`);
+            }
+
+            // Reset dan tutup modal
+            document.getElementById('form-register-volunteer').reset();
+            toggleModal('modal-volunteer', false);
+            renderVolunteers();
+        }
+
+        function handleNewVolunteer(event) {
+            event.preventDefault();
+            const title = document.getElementById('new-vol-title').value;
+            const category = document.getElementById('new-vol-category').value;
+            const location = document.getElementById('new-vol-location').value;
+            const date = document.getElementById('new-vol-date').value;
+            const author = document.getElementById('new-vol-author').value;
+            const description = document.getElementById('new-vol-desc').value;
+
+            const newVol = {
+                id: appState.volunteers.length + 1,
+                title,
+                category,
+                location,
+                description,
+                date,
+                author,
+                registered: 1
+            };
+
+            appState.volunteers.unshift(newVol);
+            alert(`Aksi volunteer baru "${title}" berhasil terpublikasi di wilayah ${location}.`);
+            
+            document.getElementById('form-new-volunteer').reset();
+            toggleModal('modal-volunteer-new', false);
+            renderVolunteers();
+        }
+
+        function openDonationModal(type) {
+            const titleElement = document.getElementById('donation-modal-title');
+            const submitBtn = document.getElementById('btn-donation-submit');
+            const donType = document.getElementById('new-don-type');
+            
+            const reqField = document.getElementById('wrapper-don-requester');
+            const targetField = document.getElementById('wrapper-don-target');
+
+            if(type === 'donasi') {
+                titleElement.innerText = "Buka Campaign Donasi Baru";
+                submitBtn.innerText = "Publikasikan Campaign Donasi";
+                donType.value = "donation";
+                donType.placeholder = "Target Donasi Nominal";
+            } else {
+                titleElement.innerText = "Ajukan Permohonan Bantuan";
+                submitBtn.innerText = "Ajukan ke Publik";
+                donType.value = "request";
+                donType.placeholder = "Kebutuhan Bantuan Mendesak";
+            }
+
+            toggleModal('modal-donation-new', true);
+        }
+
+        function handleNewDonation(event) {
+            event.preventDefault();
+            const type = document.getElementById('new-don-type').value;
+            const title = document.getElementById('new-don-title').value;
+            const itemType = document.getElementById('new-don-item').value;
+            const location = document.getElementById('new-don-location').value;
+            const target = document.getElementById('new-don-target').value || '10 Paket';
+            const requester = document.getElementById('new-don-requester').value;
+
+            const newDon = {
+                id: appState.donations.length + 1,
+                type,
+                title,
+                itemType,
+                target,
+                raised: type === 'donation' ? 'Rp 0' : 'Mencari Donatur',
+                location,
+                requester
+            };
+
+            appState.donations.unshift(newDon);
+            alert(`Permohonan program sosial berhasil diajukan untuk masyarakat ${location}.`);
+
+            document.getElementById('form-new-donation').reset();
+            toggleModal('modal-donation-new', false);
+            
+            // Pindah tab visual jika perlu
+            toggleDonationView(type);
+        }
+
+        function handleContributeDonation(id) {
+            const don = appState.donations.find(d => d.id == id);
+            if(don) {
+                alert(`Anda memilih untuk berpartisipasi/menyumbang pada program: "${don.title}". Kontak penanggung jawab (${don.requester}) akan segera dikirimkan ke perangkat Anda.`);
+            }
+        }
+
+        function addCommunityPost() {
+            const textInput = document.getElementById('community-input-text');
+            const text = textInput.value.trim();
+
+            if (!text) {
+                alert("Harap tulis beberapa kalimat terlebih dahulu sebelum mengirim update kegiatan.");
+                return;
+            }
+
+            const newPost = {
+                id: appState.communityPosts.length + 1,
+                author: 'Anggota Poltekesos (You)',
+                avatar: '🙋‍♂️',
+                time: 'Baru Saja',
+                text,
+                likes: 0,
+                comments: 0
+            };
+
+            appState.communityPosts.unshift(newPost);
+            textInput.value = '';
+            renderCommunityFeed();
+        }
+
+        function handleLikePost(id) {
+            const post = appState.communityPosts.find(p => p.id == id);
+            if(post) {
+                post.likes += 1;
+                renderCommunityFeed();
+            }
+        }
+
+        // INITIAL RENDERING SAAT HALAMAN DIBUKA pertama kali
+        window.onload = function() {
+            renderVolunteers();
+            renderDonations();
+            renderCommunityFeed();
+        }
+    </script>
+</body>
+</html>
+```eof
+
